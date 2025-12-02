@@ -1,4 +1,36 @@
 <?php
+// PRIMERO: Verificar si se solicita una imagen
+if (isset($_GET['imagen'])) {
+    $nombreImagen = basename($_GET['imagen']); // Sanitizar nombre
+    $rutaImagen = __DIR__ . "/imagenes/" . $nombreImagen;
+    
+    if (file_exists($rutaImagen)) {
+        $extension = strtolower(pathinfo($rutaImagen, PATHINFO_EXTENSION));
+        $mimeTypes = [
+            'jpg' => 'image/jpeg',
+            'jpeg' => 'image/jpeg',
+            'png' => 'image/png',
+            'gif' => 'image/gif',
+            'webp' => 'image/webp',
+            'svg' => 'image/svg+xml'
+        ];
+        
+        $contentType = $mimeTypes[$extension] ?? 'application/octet-stream';
+        
+        header("Content-Type: " . $contentType);
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Length: " . filesize($rutaImagen));
+        header("Cache-Control: public, max-age=86400"); // Cache por 1 día
+        
+        readfile($rutaImagen);
+        exit();
+    } else {
+        http_response_code(404);
+        echo "Imagen no encontrada";
+        exit();
+    }
+}
+
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
@@ -6,7 +38,7 @@ header("Access-Control-Allow-Headers: Content-Type, Accept");
 
 $file = __DIR__ . "/servicios.json";
 $BASE_URL = "https://web-production-b5c7d.up.railway.app";
-$IMAGES_PATH = $BASE_URL . "/imagenes/";
+$IMAGES_PATH = $BASE_URL . "/api.php?imagen="; // CAMBIO IMPORTANTE
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -153,3 +185,4 @@ switch ($method) {
         http_response_code(405);
         echo json_encode(["error" => "Método no permitido"]);
 }
+?>
