@@ -1,12 +1,5 @@
-
 {
-  "name": "taller-mecanico/api-servicios",
-  "description": "API REST para gestión de servicios de taller mecánico",
-  "type": "project",
   "require": {
     "php": ">=8.0"
-  },
-  "autoload": {
-    "files": []
   }
 }
