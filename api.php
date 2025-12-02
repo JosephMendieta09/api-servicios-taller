@@ -1,10 +1,15 @@
 <?php
-header("Content-Type: application/json");
+header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Content-Type, Accept");
 
 $file = __DIR__ . "/servicios.json";
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 // Cargar JSON
 function cargarServicios($file) {
@@ -38,7 +43,7 @@ switch ($method) {
 
     case "PUT":
         $input = json_decode(file_get_contents("php://input"), true);
-        $id = $input["id"] ?? null;
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
 
         foreach ($servicios as &$s) {
             if ($s["id"] == $id) {
@@ -53,7 +58,7 @@ switch ($method) {
 
     case "DELETE":
         $input = json_decode(file_get_contents("php://input"), true);
-        $id = $input["id"] ?? null;
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
 
         $servicios = array_filter($servicios, fn($s) => $s["id"] != $id);
         guardarServicios($file, array_values($servicios));
