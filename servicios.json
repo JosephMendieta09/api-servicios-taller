@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "nombre": "Cambio de aceite premium",
+        "precio": 95,
+        "imagen": "imagenes/aceite.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Alineaci\u00f3n y balanceo",
+        "precio": 120,
+        "imagen": "imagenes/alineacion.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Revisi\u00f3n de frenos",
+        "precio": 100,
+        "imagen": "imagenes/frenos.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Cambio de pastillas de freno",
+        "precio": 150,
+        "imagen": "imagenes/pastillas.png"
+    },
+    {
+        "id": 5,
+        "nombre": "Cambio de buj\u00edas",
+        "precio": 70,
+        "imagen": "imagenes/bujias.png"
+    },
+    {
+        "id": 6,
+        "nombre": "Revisi\u00f3n del sistema el\u00e9ctrico",
+        "precio": 130,
+        "imagen": "imagenes/sistelectrico.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Cambio de bater\u00eda",
+        "precio": 200,
+        "imagen": "imagenes/bateria.png"
+    },
+    {
+        "id": 8,
+        "nombre": "Escaneo computarizado",
+        "precio": 50,
+        "imagen": "imagenes/scamdig.png"
+    },
+    {
+        "id": 9,
+        "nombre": "Cambio de correa de distribuci\u00f3n",
+        "precio": 450,
+        "imagen": "imagenes/correadist.png"
+    },
+    {
+        "id": 10,
+        "nombre": "Cambio de refrigerante",
+        "precio": 90,
+        "imagen": "imagenes/refrigerante.png"
+    },
+    {
+        "id": 11,
+        "nombre": "Limpieza de inyectores",
+        "precio": 160,
+        "imagen": "imagenes/inyectores.png"
+    },
+    {
+        "id": 12,
+        "nombre": "Ajuste de suspensi\u00f3n",
+        "precio": 200,
+        "imagen": "imagenes/suspension.png"
+    },
+    {
+        "id": 13,
+        "nombre": "Cambio de filtro de aire",
+        "precio": 40,
+        "imagen": "imagenes/filtroair.png"
+    },
+    {
+        "id": 14,
+        "nombre": "Reparaci\u00f3n de alternador",
+        "precio": 350,
+        "imagen": "imagenes/alternador.png"
+    },
+    {
+        "id": 15,
+        "nombre": "Diagn\u00f3stico completo del motor",
+        "precio": 250,
+        "imagen": "imagenes/motor.png"
+    },
+    {
+        "id": 16,
+        "nombre": "Revisi\u00f3n general del veh\u00edculo",
+        "precio": 180,
+        "imagen": "imagenes/general.png"
+    }
+]
